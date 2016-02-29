@@ -1,0 +1,13 @@
+<nav-dir></nav-dir>
+
+<div class="search-wrapper">
+	<label>Search my amazing goods:</label>
+	<input ng-model="searchText.name" type="text" class="item-search">
+</div>
+
+<div class="clear"></div>
+
+<item-dir 	ng-repeat="item in items | filter: searchText"
+			item="item"
+			ng-if="item.inStock">
+</item-dir>

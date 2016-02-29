@@ -1,0 +1,7 @@
+<div class="item-wrapper">
+	<h2 ng-if="!item.inStock">OUT OF STOCK</h2>
+	<h3 class="item-name">{{ item.name }}</h3>
+	<p class="item-price">{{ item.price | currency }} | {{ item.price * 1.09 | currency:'€' }}</p>
+	<p class="item-description">{{ item.description }}</p>
+	<button ng-if="!admin" class="buy-button">I NEED THIS</button>
+</div>

@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Lato'
+}
+
+html, body {
+	background-color: #f3f3f3;
+}
+
+.clear {
+	height: 0;
+	width: 0;
+	clear: both;
+}
+
+/*
+landing view
+*/
+.featured-wrapper {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.featured-header {
+	margin: 15px 0 0 20px;
+}
+
+/*
+shop view
+*/
+.search-wrapper {
+	margin: 25px 0 0 20px;
+}
+
+.search-wrapper label {
+	font-weight: bold;
+}
+
+.item-search {
+	height: 2em;
+	margin-left: 5px;
+	border-radius: 4px;
+	padding: 3px;
+}

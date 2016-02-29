@@ -1,0 +1,12 @@
+<button ng-show="!formShow" ng-click="formShow = !formShow" class="show-new-item-form">Add a new item</button>
+
+<div ng-if="formShow" class="add-item-form">
+	<h2>Add a new item!</h2>
+	<form>
+		<input ng-model="newItem.name" type="text" placeholder="Item Name">
+		<input ng-model="newItem.price" type="number" placeholder="$4.99">
+		<textarea ng-model="newItem.description" rows="5" cols="45" placeholder="This thing is soooo cool"></textarea>
+		<div class="clear"></div>
+		<button ng-click="addItem( newItem )" class="submit-item" type="submit">Submit</button>
+	</form>
+</div>

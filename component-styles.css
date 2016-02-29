@@ -1,0 +1,105 @@
+/* 
+Nav component
+*/
+.nav-list {
+	list-style-type: none;
+	height: 70px;
+	width: 100%;
+	background-color: #2e3136;
+}
+
+.nav-item {
+	float: left;
+	margin-left: 15px;
+	margin-top: 20px;
+	font-size: 1.2em;
+}
+
+.logo {
+	color: #dfdfe0;
+	font-family: 'Sigmar One';
+	margin: -7px 10px 0 10px;
+	font-size: 1.17em;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: #dfdfe0;
+}
+
+.nav-link:visited {
+	color: #dfdfe0;
+}
+
+.nav-link:hover {
+	color: #738bd7;
+}
+
+/*
+item component
+*/
+
+.item-wrapper {
+	width: 30%;
+	height: 150px;
+	border: 1px solid #737f8d;
+	float: left;
+	margin: 20px 0 0 20px;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.item-wrapper h2 {
+	color: #f04747;
+}
+
+.item-description {
+	margin: 10px 0;
+}
+
+.buy-button {
+	height: 40px;
+	width: 200px;
+	background-color: #f04747;
+	border: none;
+	font-weight: bold;
+}
+
+.buy-button:hover {
+	background-color: #738bd7
+}
+
+/*
+add item styles
+*/
+
+.show-new-item-form, .add-item-form button {
+	display: block;
+	margin: 20px;
+	height: 40px;
+	width: 150px;
+	background-color: #738bd7;
+	border: none;
+	border-radius: 4px;
+	font-size: 1.1em;
+}
+
+.add-item-form {
+	width: 60%;
+	margin: 10px 20px;
+}
+
+.add-item-form input {
+	display: block;
+	width: 40%;
+	margin: 8px 0;
+}
+
+.add-item-form textarea {
+	display: block;
+	resize: none;
+}
+
+.add-item-form button {
+	margin: 10px 0;
+}
