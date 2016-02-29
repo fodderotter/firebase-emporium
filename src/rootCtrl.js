@@ -1,15 +1,8 @@
 angular.module('emporium')
-.controller('rootCtrl', function( $scope, itemService ) {
+.controller('rootCtrl', function( $scope, itemService, firebaseRef, $firebaseArray ) {
 
-
-	$scope.addItem = function( newItem ) {
-		itemService.addItem( newItem )
-		$scope.getItems();
-	}
+	var ref = new Firebase(firebaseRef.ref);
 	
-	$scope.getItems = function() {
-		$scope.items = itemService.getItems();
-	}
-	$scope.getItems();
+	$scope.items = $firebaseArray(ref.child('items'));
 
 });
