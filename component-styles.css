@@ -41,7 +41,7 @@ item component
 
 .item-wrapper {
 	width: 30%;
-	height: 150px;
+	height: 170px;
 	border: 1px solid #737f8d;
 	float: left;
 	margin: 20px 0 0 20px;
@@ -63,10 +63,17 @@ item component
 	background-color: #f04747;
 	border: none;
 	font-weight: bold;
+	display: block;
 }
 
 .buy-button:hover {
 	background-color: #738bd7
+}
+
+.edit-item-input {
+	display: block;
+	resize: none;
+	margin-bottom: 5px;
 }
 
 /*
