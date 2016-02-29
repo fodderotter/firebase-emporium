@@ -7,8 +7,10 @@ angular.module('emporium')
 			, admin: '@'
 		  }
 		, templateUrl: './src/components/item/item.html'
-		, controller: function( $scope, firebaseRef ) {
+		, controller: function( $scope, firebaseRef, $firebaseObject ) {
 			var itemsRef = new Firebase(firebaseRef.ref + 'items');
+
+			$scope.item = $firebaseObject(itemsRef.child($scope.item.$id));
 
 			$scope.buyItem = function() {
 				itemsRef.child($scope.item.$id)
@@ -20,6 +22,10 @@ angular.module('emporium')
 				itemsRef.child($scope.item.$id)
 						.child('inStock')
 						.set(true);
+			}
+
+			$scope.deleteItem = function() {
+				$firebaseObject(itemsRef.child($scope.item.$id)).$remove();
 			}
 		}
 
