@@ -1,4 +1,4 @@
-angular.module('emporium', ['ui.router'])
+angular.module('emporium', ['ui.router', "firebase"])
 
 .config(function( $stateProvider, $urlRouterProvider ) {
 
@@ -21,4 +21,7 @@ angular.module('emporium', ['ui.router'])
 
 	$urlRouterProvider.otherwise('/');
 
+})
+.constant("firebaseUrl", {
+	ref:"https://myemporium.firebaseio.com/"
 });

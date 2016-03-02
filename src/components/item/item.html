@@ -1,7 +1,36 @@
-<div class="item-wrapper">
+<!-- <div class="item-wrapper">
+	<button ng-if="admin" ng-click="editItem()">Edit Item</button>
 	<h2 ng-if="!item.inStock">OUT OF STOCK</h2>
 	<h3 class="item-name">{{ item.name }}</h3>
 	<p class="item-price">{{ item.price | currency }} | {{ item.price * 1.09 | currency:'€' }}</p>
 	<p class="item-description">{{ item.description }}</p>
-	<button ng-if="!admin" class="buy-button">I NEED THIS</button>
+	<button ng-click="buyItem()" ng-if="!admin" class="buy-button">I NEED THIS</button>
+	<button ng-click="removeItem()" class="buy-button" ng-if="admin">NO LONGER FOR SALE</button>
+</div>
+ -->
+<div ng-show="!editItem" class="item-wrapper">
+
+    <button ng-show="admin" ng-click="editItem = item.$id" class="edit-item">Edit Item</button>
+
+    <h2 ng-if="!item.inStock">OUT OF STOCK</h2>
+
+    <button ng-if="!item.inStock" ng-click="restock()" class="restock">Restock</button>
+
+    <h3 class="item-name">{{ item.name }}</h3>
+    <p class="item-price">{{ item.price | currency }} | {{ item.price * 1.09 | currency:'€' }}</p>
+    <p class="item-description">{{ item.description }}</p>
+    <button ng-if="!admin" ng-click="buyItem()" class="buy-button">I NEED THIS</button>
+    <button ng-if="admin" ng-click="deleteItem()" class="buy-button">NO LONGER FOR SALE</button>
+</div>
+
+<div ng-show="editItem === item.$id" class="item-wrapper">
+    <h2 ng-if="!item.inStock">OUT OF STOCK</h2>
+
+    <button ng-if="!item.inStock" ng-click="restock()" class="restock">Restock</button>
+
+    <input ng-model="item.name" ng-change="item.$save()" class="edit-item-input" type="text" />
+    <input ng-model="item.price" ng-change="item.$save()" class="edit-item-input" type="number" />
+    <textarea ng-model="item.description" ng-change="item.$save()" class="edit-item-input"></textarea>
+    <input ng-model="item.featured" ng-change="item.$save()" class="featured-check" type="checkbox">
+    <button ng-click="editItem = ''" class="buy-button">Done Editing</button>
 </div>
